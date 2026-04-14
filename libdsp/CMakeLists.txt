@@ -17,6 +17,9 @@ add_library(libdsp STATIC
     include/libdsp/filters/BiquadCascade.h
     include/libdsp/filters/Coefficients.h
     include/libdsp/reverb/DelayLine.h
+    include/libdsp/reverb/FDN.h
+    include/libdsp/reverb/AllpassChain.h
+    src/reverb/FDN.cpp
 )
 
 target_include_directories(libdsp

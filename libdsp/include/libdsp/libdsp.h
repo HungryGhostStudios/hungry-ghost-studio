@@ -12,3 +12,6 @@
 #include "filters/Coefficients.h"
 #include "nonlinear/WaveShaper.h"
 #include "nonlinear/ADAA.h"
+#include "reverb/DelayLine.h"
+#include "reverb/FDN.h"
+#include "reverb/AllpassChain.h"
