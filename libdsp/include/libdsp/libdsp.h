@@ -10,3 +10,5 @@
 #include "filters/LadderFilter.h"
 #include "filters/BiquadCascade.h"
 #include "filters/Coefficients.h"
+#include "modulation/LFO.h"
+#include "modulation/FractionalDelay.h"

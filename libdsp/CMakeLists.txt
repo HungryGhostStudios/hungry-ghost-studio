@@ -13,6 +13,8 @@ add_library(libdsp STATIC
     include/libdsp/filters/BiquadCascade.h
     include/libdsp/filters/Coefficients.h
     include/libdsp/reverb/DelayLine.h
+    include/libdsp/modulation/LFO.h
+    include/libdsp/modulation/FractionalDelay.h
 )
 
 target_include_directories(libdsp
