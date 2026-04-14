@@ -13,6 +13,7 @@ juce_add_plugin(hg-synth
 
 target_sources(hg-synth PRIVATE
     src/PluginProcessor.cpp
+    src/PluginEditor.cpp
 )
 
 target_include_directories(hg-synth PRIVATE
