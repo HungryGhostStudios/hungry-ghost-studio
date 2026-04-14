@@ -19,6 +19,12 @@ add_executable(libdsp_tests
     libdsp/test_lfo_fractional_delay.cpp
     libdsp/test_oscillator.cpp
     libdsp/test_filters.cpp
+    libdsp/test_gain_computer.cpp
+    libdsp/test_level_detector.cpp
+    libdsp/test_svf_filter.cpp
+    libdsp/test_delay_line.cpp
+    libdsp/test_level_meter.cpp
+    libdsp/test_oversampler.cpp
 )
 
 target_link_libraries(libdsp_tests
