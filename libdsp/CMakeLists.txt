@@ -4,6 +4,8 @@ add_library(libdsp STATIC
     src/libdsp.cpp
     include/libdsp/util/SmoothParameter.h
     include/libdsp/util/MidSide.h
+    include/libdsp/dynamics/LevelDetector.h
+    include/libdsp/dynamics/GainComputer.h
 )
 
 target_include_directories(libdsp
