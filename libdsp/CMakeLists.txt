@@ -10,6 +10,8 @@ add_library(libdsp STATIC
     include/libdsp/dynamics/GainComputer.h
     include/libdsp/filters/SVFFilter.h
     include/libdsp/filters/LadderFilter.h
+    include/libdsp/filters/BiquadCascade.h
+    include/libdsp/filters/Coefficients.h
     include/libdsp/reverb/DelayLine.h
 )
 
