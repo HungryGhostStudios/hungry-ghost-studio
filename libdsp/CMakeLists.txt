@@ -19,6 +19,8 @@ add_library(libdsp STATIC
     include/libdsp/reverb/DelayLine.h
     include/libdsp/reverb/FDN.h
     include/libdsp/reverb/AllpassChain.h
+    include/libdsp/modulation/LFO.h
+    include/libdsp/modulation/FractionalDelay.h
     src/reverb/FDN.cpp
 )
 

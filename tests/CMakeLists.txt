@@ -16,6 +16,8 @@ add_executable(libdsp_tests
     libdsp/test_biquad_cascade.cpp
     libdsp/test_waveshaper.cpp
     libdsp/test_compressor.cpp
+    libdsp/test_lfo.cpp
+    libdsp/test_fractional_delay.cpp
 )
 
 target_link_libraries(libdsp_tests
