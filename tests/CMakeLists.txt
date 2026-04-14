@@ -18,6 +18,7 @@ add_executable(libdsp_tests
     libdsp/test_compressor.cpp
     libdsp/test_lfo_fractional_delay.cpp
     libdsp/test_oscillator.cpp
+    libdsp/test_filters.cpp
 )
 
 target_link_libraries(libdsp_tests
