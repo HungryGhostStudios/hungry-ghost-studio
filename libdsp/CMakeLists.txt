@@ -8,6 +8,7 @@ add_library(libdsp STATIC
     include/libdsp/util/LevelMeter.h
     include/libdsp/dynamics/LevelDetector.h
     include/libdsp/dynamics/GainComputer.h
+    include/libdsp/filters/SVFFilter.h
 )
 
 target_include_directories(libdsp
