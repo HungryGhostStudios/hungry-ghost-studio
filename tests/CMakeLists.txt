@@ -12,6 +12,7 @@ FetchContent_MakeAvailable(Catch2)
 add_executable(libdsp_tests
     libdsp/test_smooth_parameter.cpp
     libdsp/test_midside.cpp
+    libdsp/test_ladder_filter.cpp
 )
 
 target_link_libraries(libdsp_tests
