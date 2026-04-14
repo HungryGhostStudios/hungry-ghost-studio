@@ -13,6 +13,7 @@ juce_add_plugin(hg-saturator
 
 target_sources(hg-saturator PRIVATE
     src/PluginProcessor.cpp
+    src/PluginEditor.cpp
 )
 
 target_include_directories(hg-saturator PRIVATE
