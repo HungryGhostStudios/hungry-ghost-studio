@@ -7,3 +7,4 @@
 #include "util/MidSide.h"
 #include "dynamics/LevelDetector.h"
 #include "dynamics/GainComputer.h"
+#include "filters/SVFFilter.h"
