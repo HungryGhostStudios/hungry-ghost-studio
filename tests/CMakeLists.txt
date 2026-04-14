@@ -26,6 +26,7 @@ add_executable(libdsp_tests
     libdsp/test_level_meter.cpp
     libdsp/test_oversampler.cpp
     libdsp/test_chorus.cpp
+    libdsp/test_fdn.cpp
 )
 
 target_link_libraries(libdsp_tests
