@@ -6,6 +6,8 @@ add_library(libdsp STATIC
     include/libdsp/util/MidSide.h
     include/libdsp/dynamics/LevelDetector.h
     include/libdsp/dynamics/GainComputer.h
+    include/libdsp/util/Oversampler.h
+    include/libdsp/util/LevelMeter.h
 )
 
 target_include_directories(libdsp
