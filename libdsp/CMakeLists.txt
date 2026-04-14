@@ -9,6 +9,7 @@ add_library(libdsp STATIC
     include/libdsp/dynamics/LevelDetector.h
     include/libdsp/dynamics/GainComputer.h
     include/libdsp/filters/SVFFilter.h
+    include/libdsp/reverb/DelayLine.h
 )
 
 target_include_directories(libdsp
