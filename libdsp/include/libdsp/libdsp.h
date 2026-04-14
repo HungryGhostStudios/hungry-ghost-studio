@@ -24,6 +24,11 @@
 #include "nonlinear/WaveShaper.h"
 #include "nonlinear/ADAA.h"
 
+// Modulation
+#include "modulation/LFO.h"
+#include "modulation/FractionalDelay.h"
+#include "modulation/Chorus.h"
+
 // Reverb
 #include "reverb/DelayLine.h"
 #include "reverb/FDN.h"

@@ -22,6 +22,7 @@ add_library(libdsp STATIC
     src/reverb/FDN.cpp
     include/libdsp/modulation/LFO.h
     include/libdsp/modulation/FractionalDelay.h
+    include/libdsp/modulation/Chorus.h
     include/libdsp/synthesis/PolyBlepOscillator.h
     src/synthesis/PolyBlepOscillator.cpp
 )
