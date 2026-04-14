@@ -1,4 +1,5 @@
 #include "PluginProcessor.h"
+#include "PluginEditor.h"
 
 HGCompressorProcessor::HGCompressorProcessor()
     : AudioProcessor(BusesProperties()
@@ -86,7 +87,7 @@ void HGCompressorProcessor::processBlock(juce::AudioBuffer<float>& buffer,
 
 juce::AudioProcessorEditor* HGCompressorProcessor::createEditor()
 {
-    return new juce::GenericAudioProcessorEditor(*this);
+    return new HGCompressorEditor(*this);
 }
 
 void HGCompressorProcessor::getStateInformation(juce::MemoryBlock& destData)

@@ -13,6 +13,7 @@ juce_add_plugin(hg-compressor
 
 target_sources(hg-compressor PRIVATE
     src/PluginProcessor.cpp
+    src/PluginEditor.cpp
 )
 
 target_include_directories(hg-compressor PRIVATE
