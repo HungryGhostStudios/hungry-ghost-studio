@@ -28,3 +28,7 @@
 #include "reverb/DelayLine.h"
 #include "reverb/FDN.h"
 #include "reverb/AllpassChain.h"
+
+// Modulation
+#include "modulation/LFO.h"
+#include "modulation/FractionalDelay.h"
