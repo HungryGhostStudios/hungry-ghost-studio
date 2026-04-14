@@ -20,6 +20,8 @@ add_library(libdsp STATIC
     include/libdsp/reverb/FDN.h
     include/libdsp/reverb/AllpassChain.h
     src/reverb/FDN.cpp
+    include/libdsp/modulation/LFO.h
+    include/libdsp/modulation/FractionalDelay.h
 )
 
 target_include_directories(libdsp
