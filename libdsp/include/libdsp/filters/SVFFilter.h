@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cmath>
+#include <libdsp/util/Constants.h>
 
 namespace libdsp {
 
@@ -78,7 +79,7 @@ private:
     void updateCoefficients() {
         if (m_sampleRate <= 0.0) return;
 
-        const float w = static_cast<float>(M_PI) * m_frequency / static_cast<float>(m_sampleRate);
+        const float w = kPiF * m_frequency / static_cast<float>(m_sampleRate);
         const float g = std::tan(w);
         const float k = 1.0f / m_q;
         const float A = std::pow(10.0f, m_gainDb / 40.0f); // sqrt of linear gain
