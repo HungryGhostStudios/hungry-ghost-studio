@@ -1,4 +1,5 @@
 #include "PluginProcessor.h"
+#include "PluginEditor.h"
 #include <cmath>
 
 HGReverbProcessor::HGReverbProcessor()
@@ -189,6 +190,11 @@ void HGReverbProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::Mid
         leftChannel[n]  = dryL * (1.0f - mixPct) + wetL * mixPct;
         rightChannel[n] = dryR * (1.0f - mixPct) + wetR * mixPct;
     }
+}
+
+juce::AudioProcessorEditor* HGReverbProcessor::createEditor()
+{
+    return new HGReverbEditor(*this);
 }
 
 void HGReverbProcessor::getStateInformation(juce::MemoryBlock& destData)
