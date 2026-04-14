@@ -1,4 +1,5 @@
 #include "PluginProcessor.h"
+#include "PluginEditor.h"
 
 // ═══════════════════════════════════════════════════════════════
 //  HGSynthVoice
@@ -266,7 +267,7 @@ void HGSynthProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::Midi
 
 juce::AudioProcessorEditor* HGSynthProcessor::createEditor()
 {
-    return new juce::GenericAudioProcessorEditor(*this);
+    return new HGSynthEditor(*this);
 }
 
 void HGSynthProcessor::getStateInformation(juce::MemoryBlock& destData)
