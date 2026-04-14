@@ -13,6 +13,7 @@ juce_add_plugin(hg-chorus
 
 target_sources(hg-chorus PRIVATE
     src/PluginProcessor.cpp
+    src/PluginEditor.cpp
 )
 
 target_include_directories(hg-chorus PRIVATE

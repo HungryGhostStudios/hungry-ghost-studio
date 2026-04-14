@@ -1,4 +1,5 @@
 #include "PluginProcessor.h"
+#include "PluginEditor.h"
 
 HGChorusProcessor::HGChorusProcessor()
     : AudioProcessor(BusesProperties()
@@ -66,7 +67,7 @@ void HGChorusProcessor::processBlock(juce::AudioBuffer<float>& buffer,
 
 juce::AudioProcessorEditor* HGChorusProcessor::createEditor()
 {
-    return new juce::GenericAudioProcessorEditor(*this);
+    return new HGChorusEditor(*this);
 }
 
 void HGChorusProcessor::getStateInformation(juce::MemoryBlock& destData)
