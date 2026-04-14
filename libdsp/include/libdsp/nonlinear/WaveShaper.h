@@ -2,6 +2,7 @@
 
 #include <cmath>
 #include <algorithm>
+#include <libdsp/util/Constants.h>
 
 namespace libdsp {
 
@@ -26,7 +27,7 @@ public:
     void prepare(double sampleRate) {
         m_sampleRate = sampleRate;
         // DC blocker coefficient: ~5Hz highpass
-        m_dcBlockR = 1.0f - (2.0f * static_cast<float>(M_PI) * 5.0f / static_cast<float>(sampleRate));
+        m_dcBlockR = 1.0f - (2.0f * libdsp::pi * 5.0f / static_cast<float>(sampleRate));
         reset();
     }
 
@@ -85,7 +86,7 @@ private:
                     return std::tanh(x * 0.8f) * 1.2f;
             case Mode::Fold:
                 // Sin-based wavefolder
-                return std::sin(x * static_cast<float>(M_PI) * 0.5f);
+                return std::sin(x * libdsp::pi * 0.5f);
             case Mode::Asym:
                 // Different positive/negative curves
                 if (x >= 0.0f)
@@ -115,7 +116,7 @@ private:
                     return 1.2f * std::log(std::cosh(x * 0.8f)) / 0.8f;
             case Mode::Fold:
                 // AD of sin(pi/2 * x) = -2/pi * cos(pi/2 * x)
-                return -2.0f / static_cast<float>(M_PI) * std::cos(x * static_cast<float>(M_PI) * 0.5f);
+                return -2.0f / libdsp::pi * std::cos(x * libdsp::pi * 0.5f);
             case Mode::Asym:
                 if (x >= 0.0f)
                     return x + std::exp(-x) - 1.0f;

@@ -3,6 +3,8 @@
 #include <libdsp/modulation/LFO.h>
 #include <libdsp/modulation/FractionalDelay.h>
 
+#include <libdsp/util/Constants.h>
+
 #include <algorithm>
 #include <array>
 #include <cmath>
@@ -146,8 +148,8 @@ public:
                 pan = 0.5f + (voicePos - 0.5f) * m_spread;
             }
 
-            float gainL = std::cos(pan * static_cast<float>(M_PI) * 0.5f);
-            float gainR = std::sin(pan * static_cast<float>(M_PI) * 0.5f);
+            float gainL = std::cos(pan * libdsp::pi * 0.5f);
+            float gainR = std::sin(pan * libdsp::pi * 0.5f);
 
             outL += wetL * gainL;
             outR += wetR * gainR;

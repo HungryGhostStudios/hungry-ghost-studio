@@ -2,6 +2,7 @@
 
 #include <cmath>
 #include <algorithm>
+#include <libdsp/util/Constants.h>
 
 namespace libdsp {
 
@@ -45,7 +46,7 @@ public:
 
     float process(float input) {
         // Cutoff to angular frequency, then bilinear warp for TPT
-        const float wc = 2.0f * static_cast<float>(M_PI) * m_cutoff / static_cast<float>(m_sampleRate);
+        const float wc = 2.0f * libdsp::pi * m_cutoff / static_cast<float>(m_sampleRate);
         const float g = std::tan(wc * 0.5f); // TPT integrator gain
 
         // Feedback coefficient: resonance scaled to 4.0 for self-oscillation

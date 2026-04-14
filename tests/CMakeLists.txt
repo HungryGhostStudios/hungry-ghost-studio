@@ -37,6 +37,9 @@ target_link_libraries(libdsp_tests
 
 target_compile_features(libdsp_tests PRIVATE cxx_std_17)
 
+# Ensure M_PI is defined on MSVC
+target_compile_definitions(libdsp_tests PRIVATE _USE_MATH_DEFINES)
+
 include(CTest)
 include(Catch)
 catch_discover_tests(libdsp_tests)

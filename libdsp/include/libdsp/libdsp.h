@@ -4,6 +4,7 @@
 // Pure C++17, no JUCE dependency
 
 // Utilities
+#include "util/Constants.h"
 #include "util/SmoothParameter.h"
 #include "util/MidSide.h"
 #include "util/Oversampler.h"
