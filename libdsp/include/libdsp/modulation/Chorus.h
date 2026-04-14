@@ -7,6 +7,7 @@
 #include <array>
 #include <cmath>
 #include <random>
+#include <libdsp/util/Constants.h>
 
 namespace libdsp {
 
@@ -146,8 +147,8 @@ public:
                 pan = 0.5f + (voicePos - 0.5f) * m_spread;
             }
 
-            float gainL = std::cos(pan * static_cast<float>(M_PI) * 0.5f);
-            float gainR = std::sin(pan * static_cast<float>(M_PI) * 0.5f);
+            float gainL = std::cos(pan * kPiF * 0.5f);
+            float gainR = std::sin(pan * kPiF * 0.5f);
 
             outL += wetL * gainL;
             outR += wetR * gainR;

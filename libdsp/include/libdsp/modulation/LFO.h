@@ -3,6 +3,7 @@
 #include <cmath>
 #include <cstdint>
 #include <random>
+#include <libdsp/util/Constants.h>
 
 namespace libdsp {
 
@@ -48,7 +49,7 @@ public:
 
         switch (m_waveform) {
             case Waveform::Sine:
-                output = static_cast<float>(std::sin(2.0 * M_PI * p));
+                output = static_cast<float>(std::sin(2.0 * kPi * p));
                 break;
 
             case Waveform::Triangle:
