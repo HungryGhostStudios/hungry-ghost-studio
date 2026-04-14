@@ -1,8 +1,13 @@
 cmake_minimum_required(VERSION 3.24)
-project(HungryGhost VERSION 0.1.0 LANGUAGES CXX)
+project(HungryGhost VERSION 0.1.0 LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Ensure M_PI and other math constants are defined on MSVC
+if(MSVC)
+    add_compile_definitions(_USE_MATH_DEFINES)
+endif()
 
 if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/modules/JUCE/CMakeLists.txt)
     add_subdirectory(modules/JUCE)

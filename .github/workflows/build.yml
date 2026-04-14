@@ -31,7 +31,7 @@ jobs:
             libxrandr-dev \
             libxrender-dev \
             libfreetype6-dev \
-            libwebkit2gtk-4.0-dev
+            libwebkit2gtk-4.1-dev
 
       - name: Configure CMake
         run: cmake --preset release
