@@ -54,7 +54,14 @@ void HGCompressorProcessor::processBlock(juce::AudioBuffer<float>& buffer,
     const int msMode = static_cast<int>(m_msMode->load());
     // 0 = Stereo, 1 = Mid, 2 = Side
     if (msMode > 0)
-        libdsp::util::MidSide::encode(left, right, numSamples);
+    {
+        for (int i = 0; i < numSamples; ++i)
+        {
+            auto [mid, side] = libdsp::MidSide::encode(left[i], right[i]);
+            left[i]  = mid;
+            right[i] = side;
+        }
+    }
 
     // Update compressor parameters
     m_compressor.setThreshold(m_threshold->load());
@@ -82,7 +89,14 @@ void HGCompressorProcessor::processBlock(juce::AudioBuffer<float>& buffer,
 
     // M/S decoding if needed
     if (msMode > 0)
-        libdsp::util::MidSide::decode(left, right, numSamples);
+    {
+        for (int i = 0; i < numSamples; ++i)
+        {
+            auto [l, r] = libdsp::MidSide::decode(left[i], right[i]);
+            left[i]  = l;
+            right[i] = r;
+        }
+    }
 }
 
 juce::AudioProcessorEditor* HGCompressorProcessor::createEditor()

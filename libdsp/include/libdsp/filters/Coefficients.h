@@ -12,10 +12,11 @@ namespace libdsp {
  */
 struct EQCoeffs {
     using CoeffArray = std::array<float, 5>; // {b0, b1, b2, a1, a2}
+    static constexpr float pi = 3.14159265358979323846f;
 
     static CoeffArray makePeaking(float freq, float gainDb, float Q, float sampleRate) {
         const float A = std::pow(10.0f, gainDb / 40.0f);
-        const float w0 = 2.0f * static_cast<float>(M_PI) * freq / sampleRate;
+        const float w0 = 2.0f * pi * freq / sampleRate;
         const float sinw = std::sin(w0);
         const float cosw = std::cos(w0);
         const float alpha = sinw / (2.0f * Q);
@@ -32,7 +33,7 @@ struct EQCoeffs {
 
     static CoeffArray makeLowShelf(float freq, float gainDb, float Q, float sampleRate) {
         const float A = std::pow(10.0f, gainDb / 40.0f);
-        const float w0 = 2.0f * static_cast<float>(M_PI) * freq / sampleRate;
+        const float w0 = 2.0f * pi * freq / sampleRate;
         const float sinw = std::sin(w0);
         const float cosw = std::cos(w0);
         const float alpha = sinw / (2.0f * Q);
@@ -50,7 +51,7 @@ struct EQCoeffs {
 
     static CoeffArray makeHighShelf(float freq, float gainDb, float Q, float sampleRate) {
         const float A = std::pow(10.0f, gainDb / 40.0f);
-        const float w0 = 2.0f * static_cast<float>(M_PI) * freq / sampleRate;
+        const float w0 = 2.0f * pi * freq / sampleRate;
         const float sinw = std::sin(w0);
         const float cosw = std::cos(w0);
         const float alpha = sinw / (2.0f * Q);
@@ -67,7 +68,7 @@ struct EQCoeffs {
     }
 
     static CoeffArray makeLP(float freq, float Q, float sampleRate) {
-        const float w0 = 2.0f * static_cast<float>(M_PI) * freq / sampleRate;
+        const float w0 = 2.0f * pi * freq / sampleRate;
         const float sinw = std::sin(w0);
         const float cosw = std::cos(w0);
         const float alpha = sinw / (2.0f * Q);
@@ -84,7 +85,7 @@ struct EQCoeffs {
     }
 
     static CoeffArray makeHP(float freq, float Q, float sampleRate) {
-        const float w0 = 2.0f * static_cast<float>(M_PI) * freq / sampleRate;
+        const float w0 = 2.0f * pi * freq / sampleRate;
         const float sinw = std::sin(w0);
         const float cosw = std::cos(w0);
         const float alpha = sinw / (2.0f * Q);
@@ -101,7 +102,7 @@ struct EQCoeffs {
     }
 
     static CoeffArray makeNotch(float freq, float Q, float sampleRate) {
-        const float w0 = 2.0f * static_cast<float>(M_PI) * freq / sampleRate;
+        const float w0 = 2.0f * pi * freq / sampleRate;
         const float sinw = std::sin(w0);
         const float cosw = std::cos(w0);
         const float alpha = sinw / (2.0f * Q);
@@ -117,7 +118,7 @@ struct EQCoeffs {
     }
 
     static CoeffArray makeAllpass(float freq, float Q, float sampleRate) {
-        const float w0 = 2.0f * static_cast<float>(M_PI) * freq / sampleRate;
+        const float w0 = 2.0f * pi * freq / sampleRate;
         const float sinw = std::sin(w0);
         const float cosw = std::cos(w0);
         const float alpha = sinw / (2.0f * Q);
