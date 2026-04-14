@@ -10,6 +10,7 @@ juce_add_plugin(hg-reverb
 
 target_sources(hg-reverb PRIVATE
     src/PluginProcessor.cpp
+    src/PluginEditor.cpp
 )
 
 target_include_directories(hg-reverb PRIVATE
