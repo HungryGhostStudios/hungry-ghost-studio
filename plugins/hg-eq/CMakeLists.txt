@@ -10,6 +10,7 @@ juce_add_plugin(hg-eq
 
 target_sources(hg-eq PRIVATE
     src/PluginProcessor.cpp
+    src/PluginEditor.cpp
 )
 
 target_include_directories(hg-eq PRIVATE

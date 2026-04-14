@@ -1,4 +1,5 @@
 #include "PluginProcessor.h"
+#include "PluginEditor.h"
 
 HGEqProcessor::HGEqProcessor()
     : AudioProcessor(BusesProperties()
@@ -191,6 +192,11 @@ void HGEqProcessor::setStateInformation(const void* data, int sizeInBytes)
     std::unique_ptr<juce::XmlElement> xml(getXmlFromBinary(data, sizeInBytes));
     if (xml && xml->hasTagName(apvts.state.getType()))
         apvts.replaceState(juce::ValueTree::fromXml(*xml));
+}
+
+juce::AudioProcessorEditor* HGEqProcessor::createEditor()
+{
+    return new HGEqEditor(*this);
 }
 
 juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
