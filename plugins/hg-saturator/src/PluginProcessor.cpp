@@ -1,4 +1,5 @@
 #include "PluginProcessor.h"
+#include "PluginEditor.h"
 
 static int oversampleIndexToFactor(int index)
 {
@@ -203,7 +204,7 @@ void HGSaturatorProcessor::processBlock(juce::AudioBuffer<float>& buffer,
 
 juce::AudioProcessorEditor* HGSaturatorProcessor::createEditor()
 {
-    return new juce::GenericAudioProcessorEditor(*this);
+    return new HGSaturatorEditor(*this);
 }
 
 void HGSaturatorProcessor::getStateInformation(juce::MemoryBlock& destData)
