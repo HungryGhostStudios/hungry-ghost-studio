@@ -27,6 +27,7 @@ add_executable(libdsp_tests
     libdsp/test_oversampler.cpp
     libdsp/test_chorus.cpp
     libdsp/test_fdn.cpp
+    integration/test_plugin_happy_path.cpp
 )
 
 target_link_libraries(libdsp_tests
