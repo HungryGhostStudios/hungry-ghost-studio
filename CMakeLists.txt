@@ -7,14 +7,38 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_subdirectory(modules/JUCE)
 add_subdirectory(modules/clap-juce-extensions)
 
-add_subdirectory(libdsp)
+if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/libdsp/CMakeLists.txt)
+    add_subdirectory(libdsp)
+endif()
 
-add_subdirectory(plugins/shared)
-add_subdirectory(plugins/hg-compressor)
-add_subdirectory(plugins/hg-eq)
-add_subdirectory(plugins/hg-saturator)
-add_subdirectory(plugins/hg-reverb)
-add_subdirectory(plugins/hg-chorus)
-add_subdirectory(plugins/hg-synth)
+if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/plugins/shared/CMakeLists.txt)
+    add_subdirectory(plugins/shared)
+endif()
 
-add_subdirectory(tests)
+if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/plugins/hg-compressor/CMakeLists.txt)
+    add_subdirectory(plugins/hg-compressor)
+endif()
+
+if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/plugins/hg-eq/CMakeLists.txt)
+    add_subdirectory(plugins/hg-eq)
+endif()
+
+if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/plugins/hg-saturator/CMakeLists.txt)
+    add_subdirectory(plugins/hg-saturator)
+endif()
+
+if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/plugins/hg-reverb/CMakeLists.txt)
+    add_subdirectory(plugins/hg-reverb)
+endif()
+
+if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/plugins/hg-chorus/CMakeLists.txt)
+    add_subdirectory(plugins/hg-chorus)
+endif()
+
+if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/plugins/hg-synth/CMakeLists.txt)
+    add_subdirectory(plugins/hg-synth)
+endif()
+
+if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/tests/CMakeLists.txt)
+    add_subdirectory(tests)
+endif()
