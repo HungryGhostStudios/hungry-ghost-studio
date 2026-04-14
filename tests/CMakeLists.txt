@@ -13,6 +13,7 @@ add_executable(libdsp_tests
     libdsp/test_smooth_parameter.cpp
     libdsp/test_midside.cpp
     libdsp/test_ladder_filter.cpp
+    libdsp/test_biquad_cascade.cpp
 )
 
 target_link_libraries(libdsp_tests

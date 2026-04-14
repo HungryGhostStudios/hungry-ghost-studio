@@ -8,3 +8,5 @@
 #include "dynamics/LevelDetector.h"
 #include "dynamics/GainComputer.h"
 #include "filters/LadderFilter.h"
+#include "filters/BiquadCascade.h"
+#include "filters/Coefficients.h"
